@@ -1,4 +1,4 @@
-# (Unofficial) [Vision Christian Radio](https://vision.org.au) and [Vision180](https://vision180.org.au) Radio Kodi Plugin
+# (Unofficial) [Vision Christian Radio](https://vision.org.au) and [Vision180 Radio](https://vision180.org.au) Kodi Plugin
 
 #### Usage
 Go to the below links to listen to the stream on fm/am, satelite, or web stream.
@@ -7,7 +7,7 @@ Or follow the below steps to install this awesome plugin for Kodi to stream to y
 
 ### Installing
 
-** This is not of the Kodi app store, I will look into it next, for the moment, You will have to install it the manual way. **
+**This is not of the Kodi app store, I will look into it next, for the moment, You will have to install it the manual way.**
 
 
 #### Enable apps from 'Unknown sources'

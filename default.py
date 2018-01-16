@@ -23,20 +23,24 @@ def build_song_list():
     #vision
     li = xbmcgui.ListItem(label='Vision Christian Radio 128k',thumbnailImage='https://vision.org.au/wp-content/themes/visionmedia/images/vision-logo.png')
     li.setProperty('IsPlayable', 'true')
+    li.setProperty('fanart_image', 'https://vision.org.au/wp-content/themes/visionmedia/images/vision-logo.png')
     url = build_url({'mode': 'stream', 'url': 'http://tx.sharp-stream.com/icecast.php?i=ucbau.aac', 'title': 'Vision Christian Radio 128k'})
     song_list.append((url, li, False))
     li = xbmcgui.ListItem(label='Vision Christian Radio 64k',thumbnailImage='https://vision.org.au/wp-content/themes/visionmedia/images/vision-logo.png')
     li.setProperty('IsPlayable', 'true')
+    li.setProperty('fanart_image', 'https://vision.org.au/wp-content/themes/visionmedia/images/vision-logo.png')
     url = build_url({'mode': 'stream', 'url': 'http://tx.sharp-stream.com/icecast.php?i=ucbau.mp3', 'title': 'Vision Christian Radio 64k'})
     song_list.append((url, li, False))
     
     #vision180
     li = xbmcgui.ListItem(label='Vision180 Radio 128k',thumbnailImage='http://vision180.org.au/wp-content/themes/vision180/images/vision-logo.png')
     li.setProperty('IsPlayable', 'true')
+    li.setProperty('fanart_image', 'http://vision180.org.au/wp-content/themes/vision180/images/vision-logo.png')
     url = build_url({'mode': 'stream', 'url': 'http://tx.sharp-stream.com/http_live.php?i=vision180.aac', 'title': 'Vision180 Radio 128k'})
     song_list.append((url, li, False))
     li = xbmcgui.ListItem(label='Vision180 Radio 64k',thumbnailImage='http://vision180.org.au/wp-content/themes/vision180/images/vision-logo.png')
     li.setProperty('IsPlayable', 'true')
+    li.setProperty('fanart_image', 'http://vision180.org.au/wp-content/themes/vision180/images/vision-logo.png')
     url = build_url({'mode': 'stream', 'url': 'http://tx.sharp-stream.com/http_live.php?i=vision180.mp3', 'title': 'Vision180 Radio 64k'})
     song_list.append((url, li, False))
     
