@@ -50,8 +50,8 @@ def build_song_list():
     
     #word for today
     d=datetime.datetime.now()
-    date = date.strftime("%Y%m%d")
-    today = date.strftime("%d %b %Y")
+    date = d.strftime("%Y%m%d")
+    today = d.strftime("%d %b %Y")
     
     #vision 
     li = xbmcgui.ListItem(label='The Word For Today - {}'.format(today),thumbnailImage='https://vision.org.au/wp-content/themes/visionmedia/images/word-for-today.png')
@@ -61,7 +61,7 @@ def build_song_list():
     song_list.append((url, li, False))
     
     #vision180
-    li = xbmcgui.ListItem(label='Word 4 Today - {}'.format(today),thumbnailImage='http://vision180.org.au/wp-content/themes/vision180/images/word-for-today.png')
+    li = xbmcgui.ListItem(label='Vision180 Word 4 Today - {}'.format(today),thumbnailImage='http://vision180.org.au/wp-content/themes/vision180/images/word-for-today.png')
     li.setProperty('IsPlayable', 'true')
     li.setProperty('fanart_image', 'http://vision180.org.au/wp-content/themes/vision180/images/word-for-today.png')
     url = build_url({'mode': 'stream', 'url': 'https://resources.vision.org.au/audio/word4today/{}.mp3'.format(date), 'title': 'The Word For Today'})
