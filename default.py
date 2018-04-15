@@ -18,12 +18,29 @@ def build_song_list():
     '''
     Vision      128k    http://tx.sharp-stream.com/icecast.php?i=ucbau.aac
     Vision      64k     http://tx.sharp-stream.com/icecast.php?i=ucbau.mp3
+    The Word For Today  https://resources.vision.org.au/audio/thewordfortoday/
     Vision180   128k    http://tx.sharp-stream.com/http_live.php?i=vision180.aac
     Vision180   64k     http://tx.sharp-stream.com/http_live.php?i=vision180.mp3
+    The Word 4 Today    https://resources.vision.org.au/audio/word4today/
     '''
+    
+    d=datetime.datetime.now()
+    date = d.strftime("%Y%m%d")
+    today = d.strftime("%d %b %Y")
+
+
     song_list = []
     #vision
-    li = xbmcgui.ListItem(label='Vision Christian Radio 128k',thumbnailImage='https://vision.org.au/wp-content/themes/visionmedia/images/vision-logo.png')
+    
+    #The Word For Today
+    li = xbmcgui.ListItem(label='The Word For Today - {}'.format(today),thumbnailImage='https://vision.org.au/wp-content/themes/visionmedia/images/word-for-today.png')
+    li.setProperty('IsPlayable', 'true')
+    li.setProperty('fanart_image', 'https://vision.org.au/wp-content/themes/visionmedia/images/word-for-today.png')
+    url = build_url({'mode': 'stream', 'url': 'https://resources.vision.org.au/audio/thewordfortoday/{}.mp3'.format(date), 'title': 'The Word For Today'})
+    song_list.append((url, li, False))
+
+
+    li = xbmcgui.ListItem(label='Vision Christian Radio',thumbnailImage='https://vision.org.au/wp-content/themes/visionmedia/images/vision-logo.png')
     li.setProperty('IsPlayable', 'true')
     li.setProperty('fanart_image', 'https://vision.org.au/wp-content/themes/visionmedia/images/vision-logo.png')
     url = build_url({'mode': 'stream', 'url': 'http://tx.sharp-stream.com/icecast.php?i=ucbau.aac', 'title': 'Vision Christian Radio 128k'})
@@ -36,7 +53,15 @@ def build_song_list():
     #song_list.append((url, li, False))
     
     #vision180
-    li = xbmcgui.ListItem(label='Vision180 Radio 128k',thumbnailImage='http://vision180.org.au/wp-content/themes/vision180/images/vision-logo.png')
+    
+    #The Word 4 Today
+    li = xbmcgui.ListItem(label='Vision180 Word 4 Today - {}'.format(today),thumbnailImage='http://vision180.org.au/wp-content/themes/vision180/images/word-for-today.png')
+    li.setProperty('IsPlayable', 'true')
+    li.setProperty('fanart_image', 'http://vision180.org.au/wp-content/themes/vision180/images/word-for-today.png')
+    url = build_url({'mode': 'stream', 'url': 'https://resources.vision.org.au/audio/word4today/{}.mp3'.format(date), 'title': 'The Word For Today'})
+    song_list.append((url, li, False))
+
+    li = xbmcgui.ListItem(label='Vision180 Radio',thumbnailImage='http://vision180.org.au/wp-content/themes/vision180/images/vision-logo.png')
     li.setProperty('IsPlayable', 'true')
     li.setProperty('fanart_image', 'http://vision180.org.au/wp-content/themes/vision180/images/vision-logo.png')
     url = build_url({'mode': 'stream', 'url': 'http://tx.sharp-stream.com/http_live.php?i=vision180.aac', 'title': 'Vision180 Radio 128k'})
@@ -48,24 +73,6 @@ def build_song_list():
     #url = build_url({'mode': 'stream', 'url': 'http://tx.sharp-stream.com/http_live.php?i=vision180.mp3', 'title': 'Vision180 Radio 64k'})
     #song_list.append((url, li, False))
     
-    #word for today
-    d=datetime.datetime.now()
-    date = d.strftime("%Y%m%d")
-    today = d.strftime("%d %b %Y")
-    
-    #vision 
-    li = xbmcgui.ListItem(label='The Word For Today - {}'.format(today),thumbnailImage='https://vision.org.au/wp-content/themes/visionmedia/images/word-for-today.png')
-    li.setProperty('IsPlayable', 'true')
-    li.setProperty('fanart_image', 'https://vision.org.au/wp-content/themes/visionmedia/images/word-for-today.png')
-    url = build_url({'mode': 'stream', 'url': 'https://resources.vision.org.au/audio/thewordfortoday/{}.mp3'.format(date), 'title': 'The Word For Today'})
-    song_list.append((url, li, False))
-    
-    #vision180
-    li = xbmcgui.ListItem(label='Vision180 Word 4 Today - {}'.format(today),thumbnailImage='http://vision180.org.au/wp-content/themes/vision180/images/word-for-today.png')
-    li.setProperty('IsPlayable', 'true')
-    li.setProperty('fanart_image', 'http://vision180.org.au/wp-content/themes/vision180/images/word-for-today.png')
-    url = build_url({'mode': 'stream', 'url': 'https://resources.vision.org.au/audio/word4today/{}.mp3'.format(date), 'title': 'The Word For Today'})
-    song_list.append((url, li, False))
     
     # add list to Kodi per Martijn
     # http://forum.kodi.tv/showthread.php?tid=209948&pid=2094170#pid2094170
